@@ -22,11 +22,22 @@ public class ConsoleExercises {
 //        System.out.println(secondUserInput);
 //        System.out.println(thirdUserInput);
 
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Enter a sentence: ");
+//        String userSentence = scanner.nextLine();
+//
+//        System.out.println(userSentence);
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a sentence: ");
-        String userSentence = scanner.nextLine();
+        System.out.println("Enter width: ");
+        System.out.println("Enter height: ");
 
-        System.out.println(userSentence);
+        int width = scanner.nextInt();
+        int height = scanner.nextInt();
+
+        System.out.println("Thee area of your room is: " + (width * height) + " ftSq");
+
     }
 }
