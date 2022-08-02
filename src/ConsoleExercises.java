@@ -13,6 +13,8 @@ public class ConsoleExercises {
 
         System.out.println("You have entered: " + userInput);
 
+        scanner.nextLine();
+
         System.out.println("Enter 3 words: ");
         String firstUserInput = scanner.next();
         String secondUserInput = scanner.next();
@@ -22,10 +24,14 @@ public class ConsoleExercises {
         System.out.println(secondUserInput);
         System.out.println(thirdUserInput);
 
+        scanner.nextLine();
+
         System.out.println("Enter a sentence: ");
         String userSentence = scanner.nextLine();
 
         System.out.println(userSentence);
+
+        scanner.nextLine();
 
 
         System.out.println("Enter width: ");
