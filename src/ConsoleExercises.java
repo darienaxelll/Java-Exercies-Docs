@@ -33,7 +33,6 @@ public class ConsoleExercises {
 
         scanner.nextLine();
 
-
         System.out.println("Enter width: ");
         System.out.println("Enter length: ");
         System.out.println("Enter height: ");
