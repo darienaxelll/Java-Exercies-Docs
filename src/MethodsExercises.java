@@ -64,7 +64,8 @@ public class MethodsExercises {
         System.out.println("Enter number of sides for a pair of dice...");
         int userInput = scanner.nextInt();
 
-
+        System.out.println("Roll dice? [Y/N]");
+        String userAnswer = scanner.next();
     }
 }
 
