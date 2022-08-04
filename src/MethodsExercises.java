@@ -8,10 +8,11 @@ public class MethodsExercises {
 //        System.out.println("Enter a number between 1 and 10: ");
 //        int userInput = scanner.nextInt();
 //
-//        getInteger(userInput, 1, 10);
+        getInteger(1, 10);
 //        factorial(userInput);
 
-        diceRolling();
+//        diceRolling();
+
 
     }
 
@@ -39,13 +40,25 @@ public class MethodsExercises {
 //        return n1 % n2;
 //    }
 
-//    public static void getInteger(int userInput, int min, int max) {
-//        if (userInput > min && userInput < max) {
-//            System.out.println("Number is in range");
-//        } else {
-//            System.out.println("Number not in range");
-//        }
-//    }
+    public static int getInteger(int min, int max) {
+        int tr  = 0;
+        do {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Enter a number between 1 and 10: ");
+            int userInput = scanner.nextInt();
+
+            if (userInput >= min && userInput <= max) {
+                System.out.println("Number is in range");
+                System.out.println(userInput);
+                tr = 1;
+            } else {
+                System.out.println("Number not in range");
+            }
+        } while (tr == 0);
+        return tr;
+    }
+
 
 //    public static void factorial(int userInput) {
 //
