@@ -11,6 +11,8 @@ public class MethodsExercises {
 //        getInteger(userInput, 1, 10);
 //        factorial(userInput);
 
+        diceRolling();
+
     }
 
 
@@ -59,13 +61,29 @@ public class MethodsExercises {
 //    }
 
     public static void diceRolling() {
-        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter number of sides for a pair of dice...");
-        int userInput = scanner.nextInt();
+            System.out.println("Roll dice? [Y/N]");
+            String userAnswer = scanner.nextLine().toUpperCase();
 
-        System.out.println("Roll dice? [Y/N]");
-        String userAnswer = scanner.next();
+            if (userAnswer.equals("Y")){
+                System.out.println("Enter number of sides for a pair of dice...");
+                int userInput = scanner.nextInt();
+
+                int dice1 = (int) (Math.random()*userInput+1);
+                int dice2 = (int) (Math.random()*userInput+1);
+                int sum = dice1 + dice2;
+
+                System.out.println(dice1);
+                System.out.println(dice2);
+
+                System.out.println("Roll: total = " + sum);
+            } else {
+                System.out.println("We can play another time");
+                break;
+            }
+        }
     }
 }
 
