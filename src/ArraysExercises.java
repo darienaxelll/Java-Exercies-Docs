@@ -1,21 +1,34 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArraysExercises {
+
+    public static Person[] addPerson(Person[] personArr, Person newPerson) {
+
+        Person[] newArr = Arrays.copyOf(personArr, personArr.length +1);
+
+        newArr[newArr.length - 1] = newPerson;
+        return newArr;
+    }
 
     public static void main(String[] args) {
         Person Nico = new Person("Nico");
         Person Jason = new Person("Jason");
         Person Patrick = new Person("Patrick");
 
-        String[] listOfPeople;
-        listOfPeople = new String[3];
+        Person[]  personArr = {Nico, Jason, Patrick};
 
-        listOfPeople[0] = Nico.getName();
-        listOfPeople[1] = Jason.getName();
-        listOfPeople[2] = Patrick.getName();
+//        for (Person person  : personArr) {
+//            System.out.println(person.getName());
+//        }
 
-        for (String listOfPerson : listOfPeople) {
-            System.out.println(listOfPerson);
+        Person Josh = new Person("Josh");
+
+        Person[] newNewList = addPerson(personArr, Josh);
+
+        for (Person person : newNewList) {
+            System.out.println(person.getName());
         }
 
     }

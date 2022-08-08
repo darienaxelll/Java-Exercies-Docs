@@ -11,6 +11,7 @@ public class Input {
     public boolean yesNo() {
         return this.scanner.nextLine().equalsIgnoreCase("y") || this.scanner.nextLine().equalsIgnoreCase("yes");
     }
+
     public int getInt(int min, int max) {
         int tr  = 0;
 
