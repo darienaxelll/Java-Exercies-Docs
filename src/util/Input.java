@@ -9,7 +9,15 @@ public class Input {
     }
 
     public boolean yesNo() {
-        return this.scanner.nextLine().equalsIgnoreCase("y") || this.scanner.nextLine().equalsIgnoreCase("yes");
+        String userInput = this.scanner.nextLine();
+
+        if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
+            System.out.println("true");
+            return true;
+        } else {
+            System.out.println("false");
+            return false;
+        }
     }
 
     public int getInt(int min, int max) {
@@ -63,6 +71,6 @@ public class Input {
     public static void main(String[] args) {
         Input in = new Input();
 
-        in.getInt(1, 20);
+        in.yesNo();
     }
 }
