@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class ServerNameGenerator {
@@ -18,6 +17,7 @@ public class ServerNameGenerator {
 
         String[] noun = {"people", "map", "history", "person", "computer", "world", "government", "family", "bird", "law"};
 
+        System.out.println("Here is your server name: ");
         System.out.println(randomElement(adjective, noun));
     }
 }
