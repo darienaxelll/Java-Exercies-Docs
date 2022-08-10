@@ -1,9 +1,14 @@
 package movies;
+
 import util.Input;
+import static movies.MoviesArray.findAll;
+
 
 public class MoviesApplication {
     public static final int INVALID_CHOICE = -1;
     public static final int EXIT_CHOICE = 0;
+
+    static Movie[] allMovies = findAll();
 
     public static void main(String[] args) {
         Input input = new Input();
@@ -33,18 +38,42 @@ public class MoviesApplication {
         switch(choice) {
             case 1:
                 // TODO: view all movies
+                int i = 0;
+                for (i = 0; i < allMovies.length; i++) {
+                    System.out.printf("Name: %s Category: %s%n", allMovies[i].getName(), allMovies[i].getCategory());
+                }
                 break;
             case 2:
                 // TODO: view movies in the musical category
+                for (i = 0; i < allMovies.length; i++) {
+                    if (allMovies[i].getCategory().equalsIgnoreCase("musical")) {
+                        System.out.printf("Name: %s Category: %s%n", allMovies[i].getName(), allMovies[i].getCategory());
+                    }
+                }
                 break;
             case 3:
                 // TODO: view movies in the drama category
+                for (i = 0; i < allMovies.length; i++) {
+                    if (allMovies[i].getCategory().equalsIgnoreCase("drama")) {
+                        System.out.printf("Name: %s Category: %s%n", allMovies[i].getName(), allMovies[i].getCategory());
+                    }
+                }
                 break;
             case 4:
                 // TODO: view movies in the horror category
+                for (i = 0; i < allMovies.length; i++) {
+                    if (allMovies[i].getCategory().equalsIgnoreCase("horror")) {
+                        System.out.printf("Name: %s Category: %s%n", allMovies[i].getName(), allMovies[i].getCategory());
+                    }
+                }
                 break;
             case 5:
                 // TODO: view movies in the scifi category
+                for (i = 0; i < allMovies.length; i++) {
+                    if (allMovies[i].getCategory().equalsIgnoreCase("scifi")) {
+                        System.out.printf("Name: %s Category: %s%n", allMovies[i].getName(), allMovies[i].getCategory());
+                    }
+                }
                 break;
         }
     }
