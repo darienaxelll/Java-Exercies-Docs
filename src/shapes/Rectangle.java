@@ -7,12 +7,12 @@ public class Rectangle extends Quadrilateral {
 
     @Override
     public void setLength(double length) {
-
+        this.length = length;
     }
 
     @Override
     public void setWidth(double width) {
-
+        this.width = width;
     }
 
     public static void main(String[] args) {
