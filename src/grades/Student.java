@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Student {
     private final String name;
     private final ArrayList<Integer> gradeList = new ArrayList<>();
-    private String username;
+    private final String username;
 
     public Student(String name, String username) {
         this.name = name;
@@ -22,6 +22,9 @@ public class Student {
         return this.username;
     }
 
+    public ArrayList getGrade() {
+        return gradeList;
+    }
     // adds the given grade to the grades property
     public void addGrade(int grade) {
         gradeList.add(grade);

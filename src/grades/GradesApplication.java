@@ -21,7 +21,7 @@ public class GradesApplication {
         student2.addGrade(100);
         student2.addGrade(78);
 
-        Student student3 = new Student("Cathryn", "ShyCat");
+        Student student3 = new Student("Jose", "ElJose");
         student3.addGrade(80);
         student3.addGrade(88);
         student3.addGrade(100);
@@ -35,7 +35,7 @@ public class GradesApplication {
         HashMap<String, Student> students = new HashMap<>();
         students.put("Josh", student1);
         students.put("Nick", student2);
-        students.put("Cathryn", student3);
+        students.put("Jose", student3);
         students.put("Jacob", student4);
 
         System.out.println("Welcome!");
@@ -52,6 +52,7 @@ public class GradesApplication {
             if (students.containsKey(userInput)) {
                 System.out.println(students.get(userInput).getName() + " - GitHub Username: " + students.get(userInput).getUsername());
                 System.out.println("Current Average: " + numberFormat.format(students.get(userInput).getGradeAverage()));
+                System.out.println("Current grades are: " + students.get(userInput).getGrade());
                 System.out.println();
             }
             else if (userInput.equalsIgnoreCase("no")) {
