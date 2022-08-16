@@ -4,8 +4,6 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import util.Input;
 
-
-
 public class GradesApplication {
     public static void main(String[] args) {
         DecimalFormat numberFormat = new DecimalFormat("#.00");

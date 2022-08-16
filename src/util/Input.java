@@ -1,76 +1,4 @@
 package util;
-//import java.util.Scanner;
-//
-//public class Input {
-//    private Scanner scanner = new Scanner(System.in);
-//
-//    public String getString() {
-//        return this.scanner.nextLine();
-//    }
-//
-//    public boolean yesNo() {
-//        String userInput = getString();
-//
-//        if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-//
-//    public int getInt(int min, int max) {
-//        int tr  = 0;
-//
-//        do {
-//            Scanner scanner = new Scanner(System.in);
-//
-//            System.out.println("Enter a number between " + min + " and " + max + ": ");
-//            int userInput = getInt();
-//
-//            if (userInput >= min && userInput <= max) {
-//                System.out.println("Number is in range");
-//                System.out.println(userInput);
-//                tr = 1;
-//            } else {
-//                System.out.println("Number not in range");
-//            }
-//        } while (tr == 0);
-//        return tr;
-//    }
-//
-//    public int getInt() {
-//        return this.scanner.nextInt();
-//    }
-//
-//    public double  getDouble(double min, double max) {
-//        int tr = 0;
-//
-//        do {
-//            Scanner scanner = new Scanner(System.in);
-//
-//            System.out.println("Enter a double between " + min + " and " + max + ": ");
-//            double userInput = getDouble();
-//
-//            if (userInput >= min && userInput <= max) {
-//                System.out.println("Number is in range");
-//                System.out.println(userInput);
-//                tr = 1;
-//            } else {
-//                System.out.println("Number not in range");
-//            }
-//        } while (tr == 0);
-//        return tr;
-//    }
-//
-//    public double getDouble () {
-//        return this.scanner.nextDouble();
-//    }
-//
-//    public static void main(String[] args) {
-//        Input in = new Input();
-//
-//    }
-//}
 
 import java.util.Scanner;
 
@@ -94,7 +22,15 @@ public class Input {
     }
 
     public int getInt() {
-        return scanner.nextInt();
+       try {
+           String s = getString();
+           return Integer.valueOf(s);
+       } catch (NumberFormatException e) {
+           System.out.println("Uh oh, something went wrong: " + e.getMessage());
+           System.out.println("Here are more details: ");
+           e.printStackTrace();
+       }
+        return 0;
     }
 
     public int getInt(int min, int max, String prompt) {
@@ -115,7 +51,15 @@ public class Input {
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        try {
+            String s = getString();
+            return Double.valueOf(s);
+        } catch (NumberFormatException e) {
+            System.out.println("Uh oh, something went wrong: " + e.getMessage());
+            System.out.println("Here are more details: ");
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public double getDouble(double min, double max) {
