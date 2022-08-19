@@ -20,7 +20,7 @@ public class MoviesApplication {
         int choice = INVALID_CHOICE;
         while(choice != EXIT_CHOICE) {
             printMenu();
-            choice = input.getInt(0, 6, "");
+            choice = input.getInt(0, 6);
             doChoice(choice);
         }
     }
@@ -34,7 +34,6 @@ public class MoviesApplication {
                 3 - view movies in the drama category
                 4 - view movies in the horror category
                 5 - view movies in the scifi category
-                6 - add new movie
                             
                 Enter your choice:\040""");
     }
@@ -80,9 +79,6 @@ public class MoviesApplication {
                     }
                 }
                 break;
-            case 6:
-                // TODO: add a new movie feat.
-
         }
     }
     private static Movie[] addMovie(Movie[] allMovies, Movie newMovie) {

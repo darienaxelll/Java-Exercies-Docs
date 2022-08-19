@@ -14,7 +14,7 @@ public class Input {
         String userInput = getString();
 
         // if user typed y or yes then return true
-        if(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
+        if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
             return true;
         }
         // else return false
@@ -22,20 +22,21 @@ public class Input {
     }
 
     public int getInt() {
-       try {
-           String s = getString();
-           return Integer.valueOf(s);
-       } catch (NumberFormatException e) {
-           System.out.println("Uh oh, something went wrong: " + e.getMessage());
-           System.out.println("Here are more details: ");
-           e.printStackTrace();
-       }
-        return 0;
+        while (true) {
+            try {
+                String userInput = getString();
+                return Integer.parseInt(userInput);
+            } catch (NumberFormatException e) {
+                System.out.println("Uh oh, something went wrong: " + e.getMessage());
+                System.out.println("Here are more details: ");
+                e.printStackTrace();
+            }
+        }
     }
 
-    public int getInt(int min, int max, String prompt) {
+    public int getInt(int min, int max) {
         // print prompt everytime this method is called!
-        System.out.print(prompt);
+//        System.out.print(prompt);
 
         // get int from user
         int userInt = getInt();
@@ -43,7 +44,7 @@ public class Input {
         // if int is not between min and max, ask user for another int
         if(userInt < min || userInt > max) {
             System.out.println("What are you, stoopid?");
-            userInt = getInt(min, max, prompt);
+            userInt = getInt(min, max);
         }
 
         // else return the int
@@ -51,15 +52,16 @@ public class Input {
     }
 
     public double getDouble() {
-        try {
-            String s = getString();
-            return Double.valueOf(s);
-        } catch (NumberFormatException e) {
-            System.out.println("Uh oh, something went wrong: " + e.getMessage());
-            System.out.println("Here are more details: ");
-            e.printStackTrace();
+        while (true) {
+            try {
+                String userInput = getString();
+                return Double.parseDouble(userInput);
+            } catch (NumberFormatException e) {
+                System.out.println("Uh oh, something went wrong: " + e.getMessage());
+                System.out.println("Here are more details: ");
+                e.printStackTrace();
+            }
         }
-        return 0;
     }
 
     public double getDouble(double min, double max) {
@@ -87,9 +89,11 @@ public class Input {
 //        System.out.print("Enter an int: ");
 //        System.out.println(input.getInt());
 
-        System.out.println(input.getInt(10, 20, "Enter an int between 10 and 20: "));
+//        System.out.println(input.getInt(10, 20, "Enter an int between 10 and 20: "));
 
 //        System.out.print("Enter a double between 10 and 20: ");
 //        System.out.println(input.getDouble(10, 20));
+
+        input.getInt();
     }
 }
